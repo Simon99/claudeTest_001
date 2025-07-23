@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣四大城市七天天氣預報</title>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        .city-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .city-card:hover {
+            transform: translateY(-5px);
+        }
+        .city-name {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2d3436;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #74b9ff;
+            padding-bottom: 10px;
+        }
+        .forecast-grid {
+            display: grid;
+            gap: 15px;
+        }
+        .day-forecast {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #74b9ff;
+        }
+        .day-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .date {
+            font-weight: bold;
+            color: #2d3436;
+            font-size: 0.9em;
+        }
+        .weather-desc {
+            color: #636e72;
+            font-size: 0.85em;
+            margin-top: 2px;
+        }
+        .weather-icon {
+            font-size: 1.5em;
+            margin: 0 15px;
+        }
+        .temp-info {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+        }
+        .temperature {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2d3436;
+        }
+        .humidity {
+            font-size: 0.8em;
+            color: #636e72;
+            margin-top: 2px;
+        }
+        .footer {
+            background: #ddd;
+            text-align: center;
+            padding: 20px;
+            color: #636e72;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌤️ 台灣四大城市七天天氣預報</h1>
+            <p>台北 • 高雄 • 桃園 • 台中</p>
+        </div>
+        
+        <div class="cities-grid">
+            <!-- 台北 Taipei -->
+            <div class="city-card">
+                <div class="city-name">🏙️ 台北 Taipei</div>
+                <div class="forecast-grid">
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月23日 (二)</div>
+                            <div class="weather-desc">多雲時晴</div>
+                        </div>
+                        <div class="weather-icon">⛅</div>
+                        <div class="temp-info">
+                            <div class="temperature">32°/26°</div>
+                            <div class="humidity">濕度 75%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月24日 (三)</div>
+                            <div class="weather-desc">午後雷陣雨</div>
+                        </div>
+                        <div class="weather-icon">⛈️</div>
+                        <div class="temp-info">
+                            <div class="temperature">30°/25°</div>
+                            <div class="humidity">濕度 85%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月25日 (四)</div>
+                            <div class="weather-desc">陰天</div>
+                        </div>
+                        <div class="weather-icon">☁️</div>
+                        <div class="temp-info">
+                            <div class="temperature">28°/24°</div>
+                            <div class="humidity">濕度 80%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月26日 (五)</div>
+                            <div class="weather-desc">晴天</div>
+                        </div>
+                        <div class="weather-icon">☀️</div>
+                        <div class="temp-info">
+                            <div class="temperature">33°/27°</div>
+                            <div class="humidity">濕度 70%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月27日 (六)</div>
+                            <div class="weather-desc">多雲</div>
+                        </div>
+                        <div class="weather-icon">☁️</div>
+                        <div class="temp-info">
+                            <div class="temperature">31°/26°</div>
+                            <div class="humidity">濕度 78%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月28日 (日)</div>
+                            <div class="weather-desc">晴時多雲</div>
+                        </div>
+                        <div class="weather-icon">🌤️</div>
+                        <div class="temp-info">
+                            <div class="temperature">34°/28°</div>
+                            <div class="humidity">濕度 72%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月29日 (一)</div>
+                            <div class="weather-desc">雷陣雨</div>
+                        </div>
+                        <div class="weather-icon">🌩️</div>
+                        <div class="temp-info">
+                            <div class="temperature">29°/25°</div>
+                            <div class="humidity">濕度 88%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 高雄 Kaohsiung -->
+            <div class="city-card">
+                <div class="city-name">🏖️ 高雄 Kaohsiung</div>
+                <div class="forecast-grid">
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月23日 (二)</div>
+                            <div class="weather-desc">晴天</div>
+                        </div>
+                        <div class="weather-icon">☀️</div>
+                        <div class="temp-info">
+                            <div class="temperature">35°/28°</div>
+                            <div class="humidity">濕度 68%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月24日 (三)</div>
+                            <div class="weather-desc">多雲時晴</div>
+                        </div>
+                        <div class="weather-icon">⛅</div>
+                        <div class="temp-info">
+                            <div class="temperature">34°/27°</div>
+                            <div class="humidity">濕度 72%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月25日 (四)</div>
+                            <div class="weather-desc">午後雷陣雨</div>
+                        </div>
+                        <div class="weather-icon">⛈️</div>
+                        <div class="temp-info">
+                            <div class="temperature">32°/26°</div>
+                            <div class="humidity">濕度 82%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月26日 (五)</div>
+                            <div class="weather-desc">晴天</div>
+                        </div>
+                        <div class="weather-icon">☀️</div>
+                        <div class="temp-info">
+                            <div class="temperature">36°/29°</div>
+                            <div class="humidity">濕度 65%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月27日 (六)</div>
+                            <div class="weather-desc">晴時多雲</div>
+                        </div>
+                        <div class="weather-icon">🌤️</div>
+                        <div class="temp-info">
+                            <div class="temperature">35°/28°</div>
+                            <div class="humidity">濕度 70%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月28日 (日)</div>
+                            <div class="weather-desc">多雲</div>
+                        </div>
+                        <div class="weather-icon">☁️</div>
+                        <div class="temp-info">
+                            <div class="temperature">33°/27°</div>
+                            <div class="humidity">濕度 75%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月29日 (一)</div>
+                            <div class="weather-desc">晴天</div>
+                        </div>
+                        <div class="weather-icon">☀️</div>
+                        <div class="temp-info">
+                            <div class="temperature">37°/30°</div>
+                            <div class="humidity">濕度 63%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 桃園 Taoyuan -->
+            <div class="city-card">
+                <div class="city-name">✈️ 桃園 Taoyuan</div>
+                <div class="forecast-grid">
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月23日 (二)</div>
+                            <div class="weather-desc">多雲</div>
+                        </div>
+                        <div class="weather-icon">☁️</div>
+                        <div class="temp-info">
+                            <div class="temperature">31°/25°</div>
+                            <div class="humidity">濕度 76%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月24日 (三)</div>
+                            <div class="weather-desc">雷陣雨</div>
+                        </div>
+                        <div class="weather-icon">🌩️</div>
+                        <div class="temp-info">
+                            <div class="temperature">29°/24°</div>
+                            <div class="humidity">濕度 87%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月25日 (四)</div>
+                            <div class="weather-desc">陰天</div>
+                        </div>
+                        <div class="weather-icon">☁️</div>
+                        <div class="temp-info">
+                            <div class="temperature">27°/23°</div>
+                            <div class="humidity">濕度 83%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月26日 (五)</div>
+                            <div class="weather-desc">晴時多雲</div>
+                        </div>
+                        <div class="weather-icon">🌤️</div>
+                        <div class="temp-info">
+                            <div class="temperature">32°/26°</div>
+                            <div class="humidity">濕度 73%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月27日 (六)</div>
+                            <div class="weather-desc">多雲時晴</div>
+                        </div>
+                        <div class="weather-icon">⛅</div>
+                        <div class="temp-info">
+                            <div class="temperature">30°/25°</div>
+                            <div class="humidity">濕度 78%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月28日 (日)</div>
+                            <div class="weather-desc">晴天</div>
+                        </div>
+                        <div class="weather-icon">☀️</div>
+                        <div class="temp-info">
+                            <div class="temperature">33°/27°</div>
+                            <div class="humidity">濕度 71%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月29日 (一)</div>
+                            <div class="weather-desc">午後雷陣雨</div>
+                        </div>
+                        <div class="weather-icon">⛈️</div>
+                        <div class="temp-info">
+                            <div class="temperature">28°/24°</div>
+                            <div class="humidity">濕度 85%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 台中 Taichung -->
+            <div class="city-card">
+                <div class="city-name">🌸 台中 Taichung</div>
+                <div class="forecast-grid">
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月23日 (二)</div>
+                            <div class="weather-desc">晴時多雲</div>
+                        </div>
+                        <div class="weather-icon">🌤️</div>
+                        <div class="temp-info">
+                            <div class="temperature">33°/26°</div>
+                            <div class="humidity">濕度 74%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月24日 (三)</div>
+                            <div class="weather-desc">多雲</div>
+                        </div>
+                        <div class="weather-icon">☁️</div>
+                        <div class="temp-info">
+                            <div class="temperature">31°/25°</div>
+                            <div class="humidity">濕度 79%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月25日 (四)</div>
+                            <div class="weather-desc">雷陣雨</div>
+                        </div>
+                        <div class="weather-icon">🌩️</div>
+                        <div class="temp-info">
+                            <div class="temperature">29°/24°</div>
+                            <div class="humidity">濕度 86%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月26日 (五)</div>
+                            <div class="weather-desc">晴天</div>
+                        </div>
+                        <div class="weather-icon">☀️</div>
+                        <div class="temp-info">
+                            <div class="temperature">34°/27°</div>
+                            <div class="humidity">濕度 69%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月27日 (六)</div>
+                            <div class="weather-desc">多雲時晴</div>
+                        </div>
+                        <div class="weather-icon">⛅</div>
+                        <div class="temp-info">
+                            <div class="temperature">32°/26°</div>
+                            <div class="humidity">濕度 76%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月28日 (日)</div>
+                            <div class="weather-desc">晴天</div>
+                        </div>
+                        <div class="weather-icon">☀️</div>
+                        <div class="temp-info">
+                            <div class="temperature">35°/28°</div>
+                            <div class="humidity">濕度 67%</div>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="day-info">
+                            <div class="date">7月29日 (一)</div>
+                            <div class="weather-desc">午後雷陣雨</div>
+                        </div>
+                        <div class="weather-icon">⛈️</div>
+                        <div class="temp-info">
+                            <div class="temperature">30°/25°</div>
+                            <div class="humidity">濕度 84%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📊 天氣數據僅供參考 | 生成時間: 2025年7月23日</p>
+            <p>💡 注意：由於無法存取即時天氣API，此為示例數據結構</p>
+        </div>
+    </div>
+</body>
+</html>
