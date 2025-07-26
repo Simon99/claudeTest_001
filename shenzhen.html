@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深圳七天天气预报</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .city-card {
+            background: #f8f9fa;
+            padding: 30px;
+        }
+        .city-name {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #2d3436;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #74b9ff;
+            padding-bottom: 10px;
+        }
+        .forecast-grid {
+            display: grid;
+            gap: 15px;
+        }
+        .day-forecast {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #74b9ff;
+        }
+        .day-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .date {
+            font-weight: bold;
+            color: #2d3436;
+            font-size: 0.9em;
+        }
+        .weather-desc {
+            color: #636e72;
+            font-size: 0.85em;
+            margin-top: 2px;
+        }
+        .weather-icon {
+            font-size: 1.5em;
+            margin: 0 15px;
+        }
+        .temp-info {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+        }
+        .temperature {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2d3436;
+        }
+        .humidity {
+            font-size: 0.8em;
+            color: #636e72;
+            margin-top: 2px;
+        }
+        .footer {
+            background: #ddd;
+            text-align: center;
+            padding: 20px;
+            color: #636e72;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌴 深圳七天天气预报</h1>
+            <p>特区 • 一线城市</p>
+        </div>
+        
+        <div class="city-card">
+            <div class="city-name">🏙️ 深圳 Shenzhen</div>
+            <div class="forecast-grid">
+                <div class="day-forecast">
+                    <div class="day-info">
+                        <div class="date">7月26日 (五)</div>
+                        <div class="weather-desc">雷阵雨</div>
+                    </div>
+                    <div class="weather-icon">⛈️</div>
+                    <div class="temp-info">
+                        <div class="temperature">32°/26°</div>
+                        <div class="humidity">湿度 85%</div>
+                    </div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-info">
+                        <div class="date">7月27日 (六)</div>
+                        <div class="weather-desc">多云</div>
+                    </div>
+                    <div class="weather-icon">☁️</div>
+                    <div class="temp-info">
+                        <div class="temperature">34°/27°</div>
+                        <div class="humidity">湿度 78%</div>
+                    </div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-info">
+                        <div class="date">7月28日 (日)</div>
+                        <div class="weather-desc">晴转多云</div>
+                    </div>
+                    <div class="weather-icon">⛅</div>
+                    <div class="temp-info">
+                        <div class="temperature">35°/28°</div>
+                        <div class="humidity">湿度 72%</div>
+                    </div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-info">
+                        <div class="date">7月29日 (一)</div>
+                        <div class="weather-desc">高温晴热</div>
+                    </div>
+                    <div class="weather-icon">🌡️</div>
+                    <div class="temp-info">
+                        <div class="temperature">36°/29°</div>
+                        <div class="humidity">湿度 68%</div>
+                    </div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-info">
+                        <div class="date">7月30日 (二)</div>
+                        <div class="weather-desc">午后雷阵雨</div>
+                    </div>
+                    <div class="weather-icon">🌩️</div>
+                    <div class="temp-info">
+                        <div class="temperature">33°/27°</div>
+                        <div class="humidity">湿度 88%</div>
+                    </div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-info">
+                        <div class="date">7月31日 (三)</div>
+                        <div class="weather-desc">多云转晴</div>
+                    </div>
+                    <div class="weather-icon">🌤️</div>
+                    <div class="temp-info">
+                        <div class="temperature">35°/28°</div>
+                        <div class="humidity">湿度 75%</div>
+                    </div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-info">
+                        <div class="date">8月1日 (四)</div>
+                        <div class="weather-desc">雷阵雨</div>
+                    </div>
+                    <div class="weather-icon">⛈️</div>
+                    <div class="temp-info">
+                        <div class="temperature">32°/26°</div>
+                        <div class="humidity">湿度 86%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📊 天气数据仅供参考 | 生成时间: 2025年7月26日</p>
+            <p>💡 注意：由于无法访问实时天气API，此为示例数据结构</p>
+        </div>
+    </div>
+</body>
+</html>
